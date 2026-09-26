@@ -1,0 +1,59 @@
+graph TD
+    %% Input Layer
+    subgraph INPUTS ["1. Multi-Modal Data Ingestion"]
+        IMG(["Facial Image (MIRA) <br> JPEG/PNG Upload"])
+        TEXT(["Physician Notes (NLP) <br> Unstructured EHR Text"])
+        VCF(["Genomic Variants (EpistaLink) <br> Patient VCF Data"])
+    end
+
+    %% Extraction & Processing Layer
+    subgraph PROCESSING ["2. Independent Extraction & Latent Mapping Layers"]
+        
+        %% Vision
+        IMG -->|"MediaPipe / OpenCV"| LMK["Calculate 468 3D Landmarks <br> & Action Units"]
+        LMK --> VEC["Assemble R^20 Phenotype Tensor <br> (e.g. fWHR, AU6)"]
+        VEC -->|"L2 Normalization"| FAISS{"FAISS Similarity Search <br> (Cosine Distance)"}
+        
+        %% Genomics
+        VCF -->|"AlphaFold Proximity Bias"| EMBED["Domain Token Embedding <br> R^64 Space"]
+        EMBED -->|"Wq, Wk, Wv Projections"| ATTN["Bidirectional Cross-Attention <br> Gating"]
+        ATTN -->|"Sparse Autoencoder"| SCORE{"Hyperbolic Epistasis Score <br> E = 10 * tanh(F/a)"}
+        
+        %% NLP + Negative Phenotypes
+        TEXT -->|"BioBERT Transformer NER"| HPO_EXT["Standardized HPO Code Mapping"]
+        HPO_EXT -->|"Sentiment & Context Analysis"| SPLIT{"Symptom Presence Router"}
+        
+        SPLIT -->|"Confirmed Present"| POS_HPO["Positive Phenotype Graph <br> + Severity / Timestamp"]
+        SPLIT -->|"Explicitly Denied in Text <br> e.g. 'No seizures'"| NEG_HPO["Negative Phenotype Graph <br> (Exclusion Criteria)"]
+
+    end
+
+    %% Fusion Engine
+    subgraph FUSION ["3. AnthropicX: Bayesian Synthesis & Graph Laplacian"]
+        
+        FAISS -->|"P(Gestalt | Disease)"| MANIFOLD{"Stiefel Manifold Attractor Space"}
+        SCORE -->|"P(Interaction | Disease)"| MANIFOLD
+        POS_HPO -->|"P(Trajectory | Disease)"| MANIFOLD
+        
+        %% Negative Phenotype Penalty
+        NEG_HPO -->|"Bayesian Exclusion Penalty <br> Reduces Probability of Diseases requiring symptom"| MANIFOLD
+
+    end
+
+    %% Final Output
+    subgraph OUTPUT ["4. Output"]
+        MANIFOLD --> DIAG{{"Final Ranked Differential Diagnosis <br> + Explainable Evidence Provenance"}}
+    end
+
+    %% Styling
+    classDef input fill:#2d3f4e,stroke:#7aa2f7,color:#fff;
+    classDef process fill:#3d2f4a,stroke:#bb9af7,color:#fff;
+    classDef nlp fill:#3d4a2f,stroke:#26e07f,color:#fff;
+    classDef exclude fill:#4f2f35,stroke:#f7768e,color:#fff;
+    classDef fusion fill:#16161e,stroke:#ff9e64,color:#fff;
+    
+    class IMG,TEXT,VCF input;
+    class LMK,VEC,FAISS,EMBED,ATTN,SCORE process;
+    class HPO_EXT,SPLIT,POS_HPO nlp;
+    class NEG_HPO exclude;
+    class MANIFOLD,DIAG fusion;
