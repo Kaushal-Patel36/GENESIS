@@ -1,0 +1,198 @@
+[
+    {
+        "case_id": "GC001",
+        "difficulty": 1,
+        "label": "Marfan Syndrome (Easy)",
+        "gold_gene": "FBN1",
+        "gold_disease_id": "OMIM:154700",
+        "gold_hpo": [
+            "HP:0000098",
+            "HP:0001166",
+            "HP:0002650",
+            "HP:0001083",
+            "HP:0002616"
+        ],
+        "vignette_steps": [
+            "Patient is a 16-year-old male presenting with unusually tall stature and long, slender fingers.",
+            "Ophthalmological examination reveals bilateral ectopia lentis.",
+            "Echocardiogram shows significant aortic root dilation at 4.5 cm.",
+            "Spine X-ray demonstrates mild to moderate scoliosis.",
+            "Family history: maternal uncle had aortic dissection at age 42."
+        ]
+    },
+    {
+        "case_id": "GC002",
+        "difficulty": 1,
+        "label": "Duchenne Muscular Dystrophy (Easy)",
+        "gold_gene": "DMD",
+        "gold_disease_id": "OMIM:300377",
+        "gold_hpo": [
+            "HP:0003560",
+            "HP:0003701",
+            "HP:0001252",
+            "HP:0001644"
+        ],
+        "vignette_steps": [
+            "5-year-old boy brought in by parents concerned about difficulty climbing stairs.",
+            "Gower's sign positive. Proximal muscle weakness bilaterally.",
+            "Creatine kinase (CK) levels markedly elevated at 12,000 U/L.",
+            "Echocardiogram shows early dilated cardiomyopathy.",
+            "DMD gene deletion confirmed on MLPA."
+        ]
+    },
+    {
+        "case_id": "GC003",
+        "difficulty": 1,
+        "label": "Dravet Syndrome (Easy)",
+        "gold_gene": "SCN1A",
+        "gold_disease_id": "OMIM:610186",
+        "gold_hpo": [
+            "HP:0001250",
+            "HP:0001263",
+            "HP:0000717"
+        ],
+        "vignette_steps": [
+            "8-month-old female with first prolonged febrile seizure lasting 25 minutes.",
+            "Subsequent seizures occurring without fever, multiple types noted.",
+            "EEG shows generalized spike-wave discharges.",
+            "Global developmental delay apparent by 12 months.",
+            "Parents report regression in social interaction and language by 18 months."
+        ]
+    },
+    {
+        "case_id": "GC004",
+        "difficulty": 2,
+        "label": "Rett Syndrome (Medium)",
+        "gold_gene": "MECP2",
+        "gold_disease_id": "OMIM:312750",
+        "gold_hpo": [
+            "HP:0002376",
+            "HP:0001250",
+            "HP:0000717",
+            "HP:0000252",
+            "HP:0001263"
+        ],
+        "vignette_steps": [
+            "18-month-old girl with previously normal development now showing regression in hand use.",
+            "Patient was reaching milestones appropriately until 14 months.",
+            "Stereotyped hand-wringing movements noted, loss of purposeful hand movements.",
+            "Microcephaly developing progressively.",
+            "Seizures began at 20 months. No family history of similar condition."
+        ]
+    },
+    {
+        "case_id": "GC005",
+        "difficulty": 2,
+        "label": "Loeys-Dietz Syndrome (Medium)",
+        "gold_gene": "TGFBR2",
+        "gold_disease_id": "OMIM:192600",
+        "gold_hpo": [
+            "HP:0002616",
+            "HP:0002650",
+            "HP:0000098",
+            "HP:0001166"
+        ],
+        "vignette_steps": [
+            "12-year-old male referred for aortic root dilation found incidentally.",
+            "Tall stature with relatively long arms and mild finger elongation.",
+            "No ectopia lentis on slit-lamp exam.",
+            "Spine MRI reveals cervical spine instability and mild scoliosis.",
+            "FBN1 negative. Family history of arterial aneurysms."
+        ]
+    },
+    {
+        "case_id": "GC006",
+        "difficulty": 2,
+        "label": "Ehlers-Danlos Syndrome (Medium)",
+        "gold_gene": "COL5A1",
+        "gold_disease_id": "OMIM:130050",
+        "gold_hpo": [
+            "HP:0000977",
+            "HP:0000978",
+            "HP:0002650"
+        ],
+        "vignette_steps": [
+            "19-year-old female presenting with recurrent joint dislocations since childhood.",
+            "Skin is notably soft and velvety; stretches more than 3 cm at forearm.",
+            "History of easy bruising and poor wound healing with atrophic scars.",
+            "No cardiac abnormalities on echo. Beighton score 8/9.",
+            "Mild scoliosis noted on exam. Mother has similar skin findings."
+        ]
+    },
+    {
+        "case_id": "GC007",
+        "difficulty": 2,
+        "label": "Achondroplasia (Medium)",
+        "gold_gene": "FGFR3",
+        "gold_disease_id": "OMIM:101400",
+        "gold_hpo": [
+            "HP:0004322",
+            "HP:0003701"
+        ],
+        "vignette_steps": [
+            "Newborn with short limbs noted at birth; limb shortening predominantly rhizomelic.",
+            "Head circumference at 98th percentile, relative macrocephaly.",
+            "Both parents of normal stature, de novo mutation suspected.",
+            "Trident hand configuration noted. Lumbar lordosis developing.",
+            "Skeletal survey confirms achondroplasia radiographic features."
+        ]
+    },
+    {
+        "case_id": "GC008",
+        "difficulty": 3,
+        "label": "Marfan with VUS Reclassification (Hard)",
+        "gold_gene": "FBN1",
+        "gold_disease_id": "OMIM:154700",
+        "gold_hpo": [
+            "HP:0000098",
+            "HP:0001166",
+            "HP:0001083",
+            "HP:0002616",
+            "HP:0000977"
+        ],
+        "vignette_steps": [
+            "20-year-old female referred for palpitations. Tall with hypermobile joints.",
+            "Mild aortic root dilation (3.8 cm, z-score +2.1). No mitral valve prolapse.",
+            "FBN1 gene previously tested, reported variant of uncertain significance.",
+            "Ophthalmology now confirms subtle superotemporal lens subluxation.",
+            "VUS in FBN1 reclassified as likely pathogenic by updated ClinVar criteria."
+        ]
+    },
+    {
+        "case_id": "GC009",
+        "difficulty": 3,
+        "label": "Atypical Rett with Preserved Speech (Hard)",
+        "gold_gene": "MECP2",
+        "gold_disease_id": "OMIM:312750",
+        "gold_hpo": [
+            "HP:0002376",
+            "HP:0001263",
+            "HP:0001250"
+        ],
+        "vignette_steps": [
+            "7-year-old girl with intellectual disability and autistic features, previously diagnosed with autism.",
+            "Parents note she had words at 12 months but lost most language by 24 months.",
+            "Stereotyped hand movements present but subtle.",
+            "EEG abnormal. Seizures began at age 5, responded partially to valproate.",
+            "Array-CGH and standard autism panel negative. MECP2 sequencing not yet performed."
+        ]
+    },
+    {
+        "case_id": "GC010",
+        "difficulty": 3,
+        "label": "Cystic Fibrosis Atypical Presentation (Hard)",
+        "gold_gene": "CFTR",
+        "gold_disease_id": "OMIM:219700",
+        "gold_hpo": [
+            "HP:0002093",
+            "HP:0001508"
+        ],
+        "vignette_steps": [
+            "3-year-old with recurrent pulmonary infections since infancy.",
+            "Failure to thrive: weight at 3rd percentile despite adequate caloric intake.",
+            "Sweat chloride test borderline at 44 mmol/L.",
+            "Standard newborn screen reported as normal.",
+            "CFTR sequencing identifies compound heterozygosity for F508del and a rare splice variant."
+        ]
+    }
+]
